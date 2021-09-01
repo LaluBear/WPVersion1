@@ -1,0 +1,72 @@
+<h1>Main#abc</h1>
+<p>Find me in app/views/main/abc.html.erb</p>
+<p>nonononoxxx</p>
+<% a=params[:a] %>
+<% b=params[:b] %>
+<% c1=0 %>
+<% c2=0 %>
+<% i=0 %>
+<%=a.class%>
+<% if a.to_i==0 then%>
+	<% if a!=nil then%>	
+		<% while(a[i]=="0")%>
+		
+			<% i+=1 %>
+		
+		<% end %>
+		
+		<% if i!=a.length || a.length==0 then%>
+		
+			<% c1=1 %>
+			
+		<% end %>
+	
+	<% else %>
+		<% c1=2 %>
+	<% end %>
+<% end %>
+
+<% i=0 %>
+<% if b.to_i==0 then%>
+
+	<% if b!=nil then%>
+		<% while(b[i]=="0")%>
+		
+			<% i+=1 %>
+			
+		<% end %>
+		
+		<% if i!=b.length || b.length==0 then%>
+		
+			<% c2=1 %>
+			
+		<% end %>
+
+	<% else %>
+		<% c2=2 %>
+	<% end %>
+<% end %>
+
+
+
+<br>
+
+<% if(c1==0)&&(c2==0) then %>
+	<% for i in a.to_i..b.to_i do%>
+		
+		<%= i%><br>
+	<% end %>
+<% end %>
+
+<% if(c1==1) then %>
+<p>a is not an Integer<p>
+<% end %>
+<% if(c2==1) then %>
+<p>b is not an Integer<p>
+<% end %>
+<% if(c1==2) then %>
+<p>a is not provided<p>
+<% end %>
+<% if(c2==2) then %>
+<p>b is not provided<p>
+<% end %>
